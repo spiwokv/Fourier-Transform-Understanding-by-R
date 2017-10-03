@@ -92,7 +92,7 @@ More info can be found at www.r-project.org, here https://github.com/spiwokv/Rtu
 
 ## Continuous Fourier Transform in 1D
 
-Let's have a simple sine wave for x from 0 to 10:
+Let's have a simple sine wave for `x` from 0 to 10:
 
 ```R
 x<-0:10000/100
@@ -114,7 +114,7 @@ y<-y1+y2
 plot(x, y, type="l")
 ```
 
-Now let's try to decompose this mixture of tones. For this we will look at a product of two sine wave, for example y1 and y2:
+Now let's try to decompose this mixture of tones. For this we will look at a product of two sine wave, for example `y1` and `y2`:
 
 ```R
 plot(x,y1*y2, type="l")
