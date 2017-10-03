@@ -3,34 +3,56 @@
 ## Basic R
 
 You can use R just like a calculator:
+
 `R
 1+1
 `
-Numbers and results of arithmetic operations can be stored in variables using <- symbol:
+
+Numbers and results of arithmetic operations can be stored in variables using `<-` symbol:
+
+`R
 x<-1
 x
 y<-1+1
 y
-Vectors can be created by c() function:
+`
+
+Vectors can be created by `c()` function:
+
+`R
 x<-c(1,3,2,3,4,5)
 x
+`
+
 This function can be also used to add an element to a vector or to join two vectors:
+
+`R
 x<-c(1,3,2,3,4,5)
 x
 x<-c(x,6)
 x
 x<-c(x,x)
 x
+`
+
 It is possible to add, subtract, multiply or divide a vector by constant:
+
+`R
 x<-c(1,3,2,3,4,5)
 x+1
 2*x
+`
+
 Two vectors of same lengths can be added, subtracted, multiplied or divided (last two are element-wise operations):
+
+`R
 x<-c(1,2,3)
 y<-c(3,1,1)
 x+y
 x-y
 x*y
+`
+
 Functions can be applied as well:
 x<-c(1,2,3)
 sin(x)
