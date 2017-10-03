@@ -101,3 +101,9 @@ In the other words, there is a high content of sine but no cosine function. In t
 Mathematically speaking:
 
 ![Eq1](Eq1.gif)
+
+The tested function *f(x)* is multiplied ("scanned") by either cos(2 $pi$ $x$ *x*) (the real part) or by -sin(2 $pi$ $x$ *x*) (imaginary part). The resulting pair of spectra gives
+an information about content of certain frequency and its phase.
+
+
+
