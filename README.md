@@ -126,7 +126,7 @@ You can see that the product is a periodic function (not simply a sine wave). Mo
 sum(y1*y2)
 ```
 
-You get reasonably low number (60.44577). You can try different frequencies and you should observe a similar trend. The only exception is when both frequencies become close to each other or same:
+You get reasonably low number (approx. 60). You can try different frequencies and you should observe a similar trend. The only exception is when both frequencies become close to each other or same:
 
 ```R
 plot(x,y1*y1, type="l")
