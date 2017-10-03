@@ -192,9 +192,7 @@ In the other words, there is a high content of sine but no cosine function. In t
 
 Mathematically speaking:
 
-```tex
-F(\theta) = \int f(x) \e^{-2 \pi i \theta x} dx
-```
+$$F(\theta) = \int f(x) \e^{-2 \pi i \theta x} dx$$
 
 ## Discrete Fourier Transform in 1D
 
