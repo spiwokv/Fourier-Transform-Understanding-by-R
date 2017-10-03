@@ -95,7 +95,7 @@ More info can be found at www.r-project.org, here https://github.com/spiwokv/Rtu
 Let's have a simple sine wave for x from 0 to 10:
 
 ```R
-x<-0:1000/100
+x<-0:10000/100
 y1<-sin(2*pi*x)
 plot(x,y1, type="l")
 ```
