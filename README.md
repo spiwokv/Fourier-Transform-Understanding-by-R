@@ -97,27 +97,27 @@ Let's have a simple sine wave for `x` from 0 to 10:
 ```R
 x<-0:10000/100
 y1<-sin(2*pi*x)
-plot(x, y1, ylim=c(-1,1), type="l")
+plot(x, y1, ylim=c(-2,2), type="l")
 ```
 
 This sine wave (it could be for example a sound wave, i.e. pure tone) has frequency equal to 1. It is possible to make another sine wave of frequency 1.2 (it could be another tone):
 
 ```R
 y2<-sin(2*pi*1.2*x)
-plot(x, y2, ylim=c(-1,1), type="l")
+plot(x, y2, ylim=c(-2,2), type="l")
 ```
 
 It is possible to sum both sine waves (analogous to pressing keys C and D on a keyboard) and plot them:
 
 ```R
 y<-y1+y2
-plot(x, y, ylim=c(-1,1), type="l")
+plot(x, y, ylim=c(-2,2), type="l")
 ```
 
 Now let's try to decompose this mixture of tones. For this we will look at a product of two sine wave, for example `y1` and `y2`:
 
 ```R
-plot(x, y1*y2, ylim=c(-1,1), type="l")
+plot(x, y1*y2, ylim=c(-2,2), type="l")
 ```
 
 You can see that the product is a periodic function (not simply a sine wave). Most interestingly, the function contains repeating parts, where one part is like a mirror image of another part (e.g. 0-8 and 4-12 in this plot, you must imagine 10-12). If you sum values of `y1*y2`:
@@ -129,7 +129,7 @@ sum(y1*y2)
 You get reasonably low number. You can try different frequencies and you should observe a similar trend. The only exception is when both frequencies become close to each other or same:
 
 ```R
-plot(x, y1*y1, ylim=c(-1,1), type="l")
+plot(x, y1*y1, ylim=c(-2,2), type="l")
 sum(y1*y1)
 ```
 
