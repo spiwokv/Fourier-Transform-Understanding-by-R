@@ -3,11 +3,9 @@
 ## Basic R
 
 You can use R just like a calculator:
-
 ```R
 1+1
 ```
-
 Numbers and results of arithmetic operations can be stored in variables using `<-` symbol:
 
 ```R
