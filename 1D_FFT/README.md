@@ -102,7 +102,7 @@ Mathematically speaking:
 
 ![Eq1](Eq1.gif)
 
-The tested function *f*(*x*) is multiplied ("scanned") by either cos(2 &pi; &xi; *x*) (the real part) or by -sin(2 &pi; &xi; *x*) (imaginary part). The resulting pair of spectra gives
+The tested function *f*(*x*) is multiplied ("scanned") by either cos(2&pi;&xi;*x*) (the real part) or by -sin(2&pi;&xi;*x*) (imaginary part). The resulting pair of spectra gives
 an information about content of certain frequency and its phase.
 
 
