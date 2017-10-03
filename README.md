@@ -100,10 +100,10 @@ y1<-sin(2*pi*x)
 plot(x, y1, ylim=c(-1,1), type="l")
 ```
 
-This sine wave (it could be for example a sound wave, i.e. pure tone) has frequency equal to 1. It is possible to make another sine wave of frequency 1.122324 (it could be another tone, 1.122324 is the ratio of frequencies of tones D and C):
+This sine wave (it could be for example a sound wave, i.e. pure tone) has frequency equal to 1. It is possible to make another sine wave of frequency 1.2 (it could be another tone):
 
 ```R
-y2<-sin(2*pi*1.122324*x)
+y2<-sin(2*pi*1.2*x)
 plot(x, y2, ylim=c(-1,1), type="l")
 ```
 
@@ -126,7 +126,7 @@ You can see that the product is a periodic function (not simply a sine wave). Mo
 sum(y1*y2)
 ```
 
-You get reasonably low number (approx. 60). You can try different frequencies and you should observe a similar trend. The only exception is when both frequencies become close to each other or same:
+You get reasonably low number. You can try different frequencies and you should observe a similar trend. The only exception is when both frequencies become close to each other or same:
 
 ```R
 plot(x, y1*y1, ylim=c(-1,1), type="l")
