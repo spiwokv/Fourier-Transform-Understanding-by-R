@@ -114,26 +114,26 @@ y<-y1+y2
 plot(x, y, ylim=c(-2,2), type="l")
 ```
 
-Now let's try to decompose this mixture of tones. For this we will look at a product of two sine wave, for example `y1` and `y2`:
+Now let's try to decompose this mixture of tones. In real life you can do it by a spectral analyser at your HiFi set or on your MP3 player software. HiFi set or MP3 player software often contains a spectral analyser which plots a content of low and high frequency sounds in your music. In order to do this in R we will look at a product of two sine wave, for example `y1` and `y2`:
 
 ```R
 plot(x, y1*y2, ylim=c(-2,2), type="l")
 ```
 
-You can see that the product is a periodic function (not simply a sine wave). Most interestingly, the function contains repeating parts, where one part is like a mirror image of another part (e.g. 0-8 and 4-12 in this plot, you must imagine 10-12). If you sum values of `y1*y2`:
+You can see that the product is a periodic function (not simply a sine wave). Most interestingly, the function contains repeating parts, where one part is a kid of mirror image of another part. If you sum values of `y1*y2`:
 
 ```R
 sum(y1*y2)
 ```
 
-You get reasonably low number. You can try different frequencies and you should observe a similar trend. The only exception is when both frequencies become close to each other or same:
+You get reasonably low number. You can try with different frequencies and you should observe a similar trend. The only exception is when both frequencies become close to each other or the same:
 
 ```R
 plot(x, y1*y1, ylim=c(-2,2), type="l")
 sum(y1*y1)
 ```
 
-This is because product of two same sine waves (or square of sine waves) is always positive. A product of two sine waves of different frequencies alternates between negative and positive parts and these prats cancel out each other in the sum.
+This is because a product of two sine waves with same frequency is always positive. A product of two sine waves of different frequencies alternates between negative and positive parts and these parts cancel out each other in the sum.
 
 You can try to make an vector of frequencies `f` and empty vector `F` and to fill `F` by `sum(y1*sin(2*pi*f*x))`:
 
