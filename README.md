@@ -190,7 +190,9 @@ sum(sin(2*pi*x)*cos(2*pi*x))
 
 In the other words, there is a high content of sine but no cosine function. In the other other words, phase matters. Separate scanning by sine and cosine gives you the information on content of waves of certain frequncies and their phases.
 
-Mathematically speaking, XXXXX
+Mathematically speaking:
+
+$F(\theta) = \int f(x) \e^{-2 \pi i \theta x} dx$
 
 ## Discrete Fourier Transform in 1D
 
