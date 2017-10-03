@@ -157,7 +157,7 @@ for(ff in f) {
 plot(f,F, type="l")
 ```
 
-You get a peak at `f` approx. 1.2. Finally try with `y`:
+You get a peak at `f` 1.2. Finally try with `y`:
 
 ```R
 f<-1:200/100
@@ -168,7 +168,7 @@ for(ff in f) {
 plot(f,F, type="l")
 ```
 
-You get two peaks at approx. 1 and 1.2. The height of a peak gives you a content of a sine wave of frequency `f` in waves `y1`, `y2` and `y`. When the frequency in e.g. `y` is close to some `f`, the product of sine waves becomes always positive and its sum becomes high. When the frequency `f` is absent in `y`, the product of sine waves alternates between positive and negative, which cancel each other, and its sum becomes low. 
+You get two peaks at 1 and 1.2. The height of a peak gives you a content of a sine wave of frequency `f` in waves `y1`, `y2` and `y`. When the frequency in e.g. `y` is close to some `f`, the product of sine waves becomes always positive and its sum becomes high. When the frequency `f` is absent in `y`, the product of sine waves alternates between positive and negative, which cancel each other, and its sum becomes low. 
 
 
 
