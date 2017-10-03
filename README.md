@@ -4,13 +4,13 @@
 
 You can use R just like a calculator:
 
-```{r}
+```R
 1+1
 ```
 
 Numbers and results of arithmetic operations can be stored in variables using `<-` symbol:
 
-```{r}
+```R
 x<-1
 x
 y<-1+1
@@ -19,14 +19,14 @@ y
 
 Vectors can be created by `c()` function:
 
-```{r}
+```R
 x<-c(1,3,2,3,4,5)
 x
 ```
 
 This function can be also used to add an element to a vector or to join two vectors:
 
-```{r}
+```R
 x<-c(1,3,2,3,4,5)
 x
 x<-c(x,6)
@@ -37,7 +37,7 @@ x
 
 It is possible to add, subtract, multiply or divide a vector by constant:
 
-```{r}
+```R
 x<-c(1,3,2,3,4,5)
 x+1
 2*x
@@ -45,7 +45,7 @@ x+1
 
 Two vectors of same lengths can be added, subtracted, multiplied or divided (last two are element-wise operations):
 
-```{r}
+```R
 x<-c(1,2,3)
 y<-c(3,1,1)
 x+y
@@ -55,20 +55,20 @@ x*y
 
 Functions can be applied as well:
 
-```{r}
+```R
 x<-c(1,2,3)
 sin(x)
 ```
 
 It is possible to create a simple series vector by `start:end`:
 
-```{r}
+```R
 x<-1:10
 ```
 
 Finally, you can use plot function to make a simple plot:
 
-```{r}
+```R
 x<-0:100/10
 y<-sin(x)
 plot(x,y) # for points
@@ -77,14 +77,14 @@ plot(x,y, type=”l”) # for lines
 
 or it is possible to add lines to existing plot:
 
-```{r}
+```R
 plot(x,y) # for points, do not close the window of the plot!!!
 lines(x,y) # for lines
 ```
 
 In R you can also do programming like for-cycles:
 
-```{r}
+```R
 for(i in 1:100) {
   print(i)
 }
