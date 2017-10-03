@@ -146,7 +146,7 @@ for(ff in f) {
 plot(f,F, type="l")
 ```
 
-You should get a peak at `f` = 1. You can try for `y2`:
+You should get a peak at `f` = 1. In the other words we scanned our signal `y` by different frequencies and we found that the mostly present one is 1. You can try for `y2`:
 
 ```R
 f<-1:200/100
@@ -170,7 +170,25 @@ plot(f,F, type="l")
 
 You get two peaks at 1 and 1.2. The height of a peak gives you a content of a sine wave of frequency `f` in waves `y1`, `y2` and `y`. When the frequency in e.g. `y` is close to some `f`, the product of sine waves becomes always positive and its sum becomes high. When the frequency `f` is absent in `y`, the product of sine waves alternates between positive and negative, which cancel each other, and its sum becomes low. 
 
+What about when we replace sin by cos:
 
+```R
+f<-1:200/100
+F<-c()
+for(ff in f) {
+  F<-c(F,sum(y*cos(2*pi*ff*x)))
+}
+plot(f,F, type="l")
+```
+
+The reuslt is just a noise. This is because the product of sine and cosine of the same frequency is again a function alternating between negative and positive values and its sum is zero:
+
+```R
+plot(x, sin(2*pi*x)*cos(2*pi*x), ylim=c(-2,2), type="l")
+sum(sin(2*pi*x)*cos(2*pi*x))
+```
+
+In the other words, there is a high content of sine but no cosine function. In the other other words, phase matters. Separate scanning by sine and cosine gives you the information on content of waves of certain frequncies and their phases.
 
 Mathematically speaking, XXXXX
 
