@@ -12,21 +12,35 @@ lines(x,y)
 where car wheels are at x = 5 and 15, front window at 5-7 and rear window at 13-17.
 This shape can be transformed by Fourier transform as a sum of wawes with different
 frequencies, amplitudes and phases. It can be shown that this shape can be expressed
-as a sum of sine and cosine waves with wave lengths equal to range of data, its 1/2,
-1/3, 1/4 etc.
+as a sum of sine and cosine waves with an infinit wave length (constant function)
+and wave lengths equal to the range of data, its 1/2, 1/3, 1/4 etc.
+
+Let us try with a "wave" of infinite wave length:
+
+```R
+plot(x,y, yrange=c(-2,2))
+lines(x,y)
+lines(x,sin(2*pi*0*x/20), col="red")
+points(x,y*sin(2*pi*0*x/20), col="blue")
+lines(x,y*sin(2*pi*0*x/20), col="blue")
+```
+
+```R
+sum(y*sin(2*pi*0*x/20))
+```
 
 Let us try with wave length equal to range of data:
 
 ```R
-plot(x,y)
+plot(x,y, yrange=c(-2,2))
 lines(x,y)
-lines(x,sin(2*pi*x/20), col="red")
-points(x,y*sin(2*pi*x/20), col="blue")
-lines(x,y*sin(2*pi*x/20), col="blue")
+lines(x,sin(2*pi*1*x/20), col="red")
+points(x,y*sin(2*pi*1*x/20), col="blue")
+lines(x,y*sin(2*pi*1*x/20), col="blue")
 ```
 
 ```R
-sum(y*sin(xt))
+sum(y*sin(2*pi*1*x/20))
 ```
 
 ```R
