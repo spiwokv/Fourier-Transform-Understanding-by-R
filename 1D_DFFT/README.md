@@ -3,23 +3,26 @@
 Let us make a 1D picture of a car:
 
 ```R
-x<-0:79
+x<-0:19
 y<-c(0,0,0,0,1,1,1.5,2,2,2,2,2,2,2,1.5,1,0.5,0,0,0)
-y<-rep(y,times=4)
 plot(x,y)
 lines(x,y)
 ```
 
-```R
-xt<-2*pi*x/80
-```
+where car wheels are at x = 5 and 15, front window at 5-7 and rear window at 13-17.
+This shape can be transformed by Fourier transform as a sum of wawes with different
+frequencies, amplitudes and phases. It can be shown that this shape can be expressed
+as a sum of sine and cosine waves with wave lengths equal to range of data, its 1/2,
+1/3, 1/4 etc.
+
+Let us try with wave length equal to range of data:
 
 ```R
 plot(x,y)
 lines(x,y)
-lines(x,sin(xt), col="red")
-points(x,y*sin(xt), col="blue")
-lines(x,y*sin(xt), col="blue")
+lines(x,sin(2*pi*x/20), col="red")
+points(x,y*sin(2*pi*x/20), col="blue")
+lines(x,y*sin(2*pi*x/20), col="blue")
 ```
 
 ```R
