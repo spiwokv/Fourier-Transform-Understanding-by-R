@@ -192,6 +192,3 @@ zero values everywhere, except at 0, *M*, 2*M* etc. In general, points at 0, *M*
 the shape of the car, whereas points in between determine differences between individual cars.
 Similar effect takes place in crystals.
 
-
-
-
