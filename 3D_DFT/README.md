@@ -14,6 +14,7 @@ library(rgl)
 dm<-melt(d)
 points3d(dm$Var1,dm$Var2,dm$Var3,size=5,color=rainbow(3)[dm$value+1])
 ```
+![Fig1](fig1.png)
 
 If you get error message you have to install package reshape2 and rgl by `install.packages("reshape2")`
 and `install.packages("rgl")`.
@@ -33,6 +34,7 @@ library(rgl)
 wm<-melt(w)
 points3d(wm$Var1,wm$Var2,wm$Var3,size=5,color=rainbow(22)[10*(wm$value+1)+1])
 ```
+![Fig2](fig2.png)
 
 Now, let us try to scan the 3D car with cosine and sine waves with all *h*, *k* and *l* values
 (**may be slow, be patient or stop with Ctrl+C**):
@@ -61,6 +63,8 @@ points3d(f1m$Var1,f1m$Var2,f1m$Var3,size=5,color=rainbow(100)[99*(f1m$value-min(
 f2m<-melt(f2)
 points3d(f2m$Var1,f2m$Var2,f2m$Var3,size=5,color=rainbow(100)[99*(f2m$value-min(f2m$value))/(max(f2m$value)-min(f2m$value))+1])
 ```
+![Fig3](fig3.png)
+![Fig4](fig4.png)
 
 We made a "3D spectra" of the car. Again reconstruct the car image from *h*, *k* and *l* waves:
 ```R
@@ -82,6 +86,7 @@ library(rgl)
 dmnew<-melt(dnew)
 points3d(dmnew$Var1,dmnew$Var2,dmnew$Var3,size=5,color=rainbow(3)[dmnew$value+1.00000001])
 ```
+![Fig5](fig5.png)
 
 There are some numerical errors caused by rounding up, therefore we added 1.00000001 instead of
 just 1 for plot color. Again, when we make several copies of car in the crystal manner we obtain
