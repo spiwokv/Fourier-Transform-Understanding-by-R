@@ -21,6 +21,8 @@ w<-cos(outer(2*pi*x/100,2*pi*y/100,"+"))
 persp(w,  phi = 50, theta = -50, xlab="x", ylab="y", zlab="f")
 image(w)
 ```
+![Fig1](fig1.png)
+
 The function `persp` was used to show the function in perspective but we will use the function `image`
 instead. We can further add coeficients *h* and *k* into the function `outer`:
 ```R
@@ -31,6 +33,8 @@ k<-3
 w<-cos(outer(2*pi*h*x/100, 2*pi*k*y/100, "+"))
 image(w)
 ```
+![Fig2](fig2.png)
+
 The *h*=2 and *k*=3 cause that if you look at the bottom or top or enywhere in the plot there are
 two cosine waves (4 pi) in the horizontal and if you look at the bottom or top or enywhere in the
 plot there are three cosine waves (6 pi).
@@ -45,6 +49,7 @@ k<-3
 w<-sin(outer(2*pi*h*x/100, 2*pi*k*y/100, "+"))
 image(w)
 ```
+![Fig3](fig3.png)
 
 In the 1D example we used a 1D car drawn on 20 points and we have shown that we can detrermine it
 by amplitudes 20 sines and 20 cosine waves (or 20 cosine waves with corresponding phases). In 2D
@@ -57,6 +62,7 @@ z[4:5,4:5]<-1
 z[15:16,4:5]<-1
 image(z)
 ```
+![Fig4](fig4.png)
 
 Similarly to 1D case we have a limited number of waves to determine the car image. These are 2D
 sine and cosine waves with coefficients *h* from 0 to 19 and *k* from 0 to 19. We can look at
@@ -71,6 +77,8 @@ image(w)
 image(w*z)
 sum(w*z)/20
 ```
+![Fig5](fig5.png)
+![Fig6](fig6.png)
 
 Now, let us try with cosine and sine waves with all *h* and *k* values:
 ```R
@@ -89,6 +97,8 @@ for(h in 0:19) {
 image(f1)
 image(f2)
 ```
+![Fig7](fig7.png)
+![Fig8](fig8.png)
 
 We made a "2D spectra" of the car image. Again reconstruct the car image from *h* and *k* waves:
 ```R
@@ -103,6 +113,7 @@ for(h in 0:19) {
 }
 image(znew)
 ```
+![Fig9](fig9.png)
 
 Again, when we make several copies of car in the crystal manner we obtain the same spectra but
 with blank spaces:
@@ -113,6 +124,10 @@ z[6:16,9:12]<-1
 z[4:5,4:5]<-1
 z[15:16,4:5]<-1
 image(z)
+```
+![Fig10](fig10.png)
+
+```R
 z2<-matrix(rep(0,times=9*400), nrow=3*20)
 z2[1:20,1:20]<-z
 z2[1:20,21:40]<-z
@@ -124,6 +139,11 @@ z2[41:60,1:20]<-z
 z2[41:60,21:40]<-z
 z2[41:60,41:60]<-z
 image(z2)
+```
+
+![Fig11](fig11.png)
+
+```R
 f1<-matrix(rep(0, times=60*60), nrow=60)
 f2<-matrix(rep(0, times=60*60), nrow=60)
 x<-0:59
@@ -139,6 +159,9 @@ for(h in 0:59) {
 image(f1)
 image(f2)
 ```
+![Fig12](fig12.png)
+![Fig13](fig13.png)
+
 Similarly to 1D example, places of "spots" (points with non-zero values) determine the shape of lattice on
 which the car is periodically located. Phase (i.e. how much sine and how much cosine wave is present) is not
 important for determination of the shape of the lattice. Intensities of "spots" and phases determine
