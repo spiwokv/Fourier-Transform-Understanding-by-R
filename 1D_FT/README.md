@@ -1,3 +1,5 @@
+[<< back](../README.md)
+
 # Continuous Fourier Transform in 1D
 
 Let's have a simple sine wave for `x` from 0 to 10:
