@@ -8,6 +8,7 @@ y<-c(0,0,0,0,1,1,1.5,2,2,2,2,2,2,2,1.5,1,0.5,0,0,0)
 plot(x,y)
 lines(x,y)
 ```
+![Fig1](fig1.png)
 
 where car wheels are at x = 5 and 15, front window at 5-7 and rear window at 13-17.
 This shape can be transformed by Fourier transform as a sum of wawes with different
@@ -25,6 +26,7 @@ lines(x,cos(2*pi*0*x/20), col="red")
 points(x,y*cos(2*pi*0*x/20), col="blue")
 lines(x,y*cos(2*pi*0*x/20), col="blue")
 ```
+![Fig2](fig2.png)
 
 The red line is the infinite-width cosine wave (equal to 1). The blue line is the original
 car multiplied by the wave, i.e. the original car. We can sum `y*cos(2*pi*0*x/20))` 
@@ -44,6 +46,7 @@ points(x,y*sin(2*pi*1*x/20), col="blue")
 lines(x,y*sin(2*pi*1*x/20), col="blue")
 sum(y*sin(2*pi*1*x/20))/20
 ```
+![Fig3](fig3.png)
 
 There is not much of this sine wave. Next, let us try with a sine wave length equal
 to range 1/2 of data:
@@ -56,6 +59,7 @@ points(x,y*sin(2*pi*2*x/20), col="blue")
 lines(x,y*sin(2*pi*2*x/20), col="blue")
 sum(y*sin(2*pi*2*x/20))/20
 ```
+![Fig4](fig4.png)
 
 We can try with a sine wave length equal to range 1/3 and 1/4 of data:
 
@@ -67,6 +71,8 @@ points(x,y*sin(2*pi*3*x/20), col="blue")
 lines(x,y*sin(2*pi*3*x/20), col="blue")
 sum(y*sin(2*pi*3*x/20))/20
 ```
+![Fig5](fig5.png)
+
 
 ```R
 plot(x,y, ylim=c(-2,2))
@@ -76,6 +82,7 @@ points(x,y*sin(2*pi*4*x/20), col="blue")
 lines(x,y*sin(2*pi*4*x/20), col="blue")
 sum(y*sin(2*pi*4*x/20))/20
 ```
+![Fig6](fig6.png)
 
 and so forth. If we do this for all sine and cosine waves up 1/19 (1/number of data points - 1),
 we can use the corresponding sums divided by numbers of points (wave contents) to perfectly
@@ -99,6 +106,7 @@ for(i in 0:19) {
 plot(x,ynew)
 lines(x,ynew)
 ```
+![Fig7](fig7.png)
 
 We can plot frequency profiles `f1` and `f2`:
 
@@ -106,6 +114,8 @@ We can plot frequency profiles `f1` and `f2`:
 plot(x,f1)
 plot(x,f2)
 ```
+![Fig8](fig8.png)
+![Fig9](fig9.png)
 
 If we use just for example 10 wave pairs instead of all waves we can get almost perfect
 car image:
@@ -119,6 +129,7 @@ for(i in 0:9) {
 plot(x,ynew)
 lines(x,ynew)
 ```
+![Fig10](fig10.png)
 
 All together, we can express any discrete one-dimensional function with *N* points by (approximately)
 *N* pairs of sine and cosine waves of wave lengths equal to infinity, range of function, its 1/2, 1/3,
@@ -133,6 +144,7 @@ y<-c(y,y)
 plot(x,y)
 lines(x,y)
 ```
+![Fig11](fig11.png)
 
 Scanning by a cosine wave of infinite wave length:
 
@@ -144,6 +156,7 @@ points(x,y*cos(2*pi*0*x/40), col="blue")
 lines(x,y*cos(2*pi*0*x/40), col="blue")
 sum(y*cos(2*pi*0*x/40))/40
 ```
+![Fig12](fig12.png)
 
 gives the same result as for single image car. The sum is doubled but it is divided by 40 instead of 20.
 
@@ -158,6 +171,7 @@ points(x,y*sin(2*pi*1*x/40), col="blue")
 lines(x,y*sin(2*pi*1*x/40), col="blue")
 sum(y*sin(2*pi*1*x/40))/40
 ```
+![Fig13](fig13.png)
 
 Scanning by a sine wave of wave length equal to 1/2 of the range gives the same result as scanning of a
 single car image by a sine wave of wave length equal to its range:
@@ -170,6 +184,7 @@ points(x,y*sin(2*pi*2*x/40), col="blue")
 lines(x,y*sin(2*pi*2*x/40), col="blue")
 sum(y*sin(2*pi*2*x/40))/40
 ```
+![Fig14](fig14.png)
 
 Again, the sum is doubled but divided by 40 instead of 20, similarly to the cosine wave of infinite
 wave length. The same situation is with all other frequencies, even frequencies are equal to same values
@@ -185,6 +200,8 @@ for(i in 0:39) {
 plot(x,f1)
 plot(x,f2)
 ```
+![Fig15](fig15.png)
+![Fig16](fig16.png)
 
 When we replace two cars by four, we obtain a spectrum with all points equal to zero except points
 0, 4, 8 etc. equal to spectra of a single car. Similarly, any series of *M* car images will lead to
