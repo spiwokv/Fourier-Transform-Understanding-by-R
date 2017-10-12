@@ -6,7 +6,7 @@ Another important point related to Fourier transform is convolution. Convolution
 two mathematical functions as an input and returns a mathematical function as the output.
 Mathematically it is:
 
-[Eq1]("Eq1.gif")
+[Eq1](Eq1.gif)
 
 You can imagine convolution as taking of function *f* and *g* and moving the function
 *g* horizontally by *t* (*g*(*x*-*t*) is *g*(*x*) moved horizontally by value of *t*) and 
