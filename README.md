@@ -8,4 +8,3 @@ Contents:
 - [3D_DFT](3D_DFT/README.md)
 - [convolution](convolution/README.md)
 
-
