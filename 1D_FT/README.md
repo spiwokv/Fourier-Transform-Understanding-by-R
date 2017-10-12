@@ -15,7 +15,7 @@ y2<-sin(2*pi*1.2*x)
 plot(x, y2, ylim=c(-2,2), type="l")
 ```
 
-It is possible to sum both sine waves (analogous to pressing keys C and D on a keyboard) and plot them:
+It is possible to sum both sine waves (analogous to pressing two keys corresponding to these tones on a keyboard) and plot them:
 
 ```R
 y<-y1+y2
