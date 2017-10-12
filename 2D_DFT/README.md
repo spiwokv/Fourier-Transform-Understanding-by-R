@@ -1,3 +1,4 @@
+# Discrete Fouriere transform in 2D
 
 Before we start with Fourier transform let me introduce the R function `outer`. This function takes two
 vectors and a function as arguments and creates a matrix. Let us ilustrate on this example:
@@ -71,7 +72,7 @@ image(w*z)
 sum(w*z)/20
 ```
 
-Now, let us try with cosine waves with all necessary values:
+Now, let us try with cosine and sine waves with all *h* and *k* values:
 ```R
 f1<-matrix(rep(0, times=20*20), nrow=20)
 f2<-matrix(rep(0, times=20*20), nrow=20)
@@ -89,7 +90,7 @@ image(f1)
 image(f2)
 ```
 
-Now let us again reconstruct the car image from *h* and *k* waves:
+We made a "2D spectra" of the car image. Again reconstruct the car image from *h* and *k* waves:
 ```R
 znew<-matrix(rep(0,times=400), nrow=20)
 for(h in 0:19) {
@@ -102,4 +103,46 @@ for(h in 0:19) {
 }
 image(znew)
 ```
+
+Again, when we make several copies of car in the crystal manner we obtain the same spectra but
+with blank spaces:
+```R
+z<-matrix(rep(0,times=400), nrow=20)
+z[3:17,5:8]<-2
+z[6:16,9:12]<-1
+z[4:5,4:5]<-1
+z[15:16,4:5]<-1
+image(z)
+z2<-matrix(rep(0,times=9*400), nrow=3*20)
+z2[1:20,1:20]<-z
+z2[1:20,21:40]<-z
+z2[1:20,41:60]<-z
+z2[21:40,1:20]<-z
+z2[21:40,21:40]<-z
+z2[21:40,41:60]<-z
+z2[41:60,1:20]<-z
+z2[41:60,21:40]<-z
+z2[41:60,41:60]<-z
+image(z2)
+f1<-matrix(rep(0, times=60*60), nrow=60)
+f2<-matrix(rep(0, times=60*60), nrow=60)
+x<-0:59
+y<-0:59
+for(h in 0:59) {
+  for(k in 0:59) {
+    w<-cos(outer(2*pi*h*x/60, 2*pi*k*y/60, "+"))
+    f1[h+1,k+1]<-sum(w*z2)/3600
+    w<-sin(outer(2*pi*h*x/60, 2*pi*k*y/60, "+"))
+    f2[h+1,k+1]<-sum(w*z2)/3600
+  }
+}
+image(f1)
+image(f2)
+```
+Similarly to 1D example, places of "spots" (points with non-zero values) determine the shape of lattice on
+which the car is periodically located. Phase (i.e. how much sine and how much cosine wave is present) is not
+important for determination of the shape of the lattice. Intensities of "spots" and phases determine
+the shape of the car. Finally, intensities in points other than spots determine differences between individual
+cars (no intensities means that all cars are same).
+
 
