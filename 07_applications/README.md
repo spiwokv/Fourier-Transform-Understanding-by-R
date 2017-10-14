@@ -127,6 +127,6 @@ for(h in 0:19) {
 image(znew)
 ```
 
-You can use for example [ImageJ]{https://imagej.nih.gov/ij/docs/examples/FFT/index.html}
+You can use for example [ImageJ](https://imagej.nih.gov/ij/docs/examples/FFT/index.html)
 
 
