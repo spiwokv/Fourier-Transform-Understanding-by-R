@@ -1,9 +1,9 @@
 [<< back](../README.md)
 
-# Discrete Fouriere transform in 2D
+# Discrete Fourier transform in 2D
 
 Before we start with Fourier transform let me introduce the R function `outer`. This function takes two
-vectors and a function as arguments and creates a matrix. Let us ilustrate on this example:
+vectors and a function as arguments and creates a matrix. Let us illustrate on this example:
 
 ```R
 x<-1:3
@@ -26,7 +26,7 @@ image(w)
 ![Fig1](fig1.png)
 
 The function `persp` was used to show the function in perspective but we will use the function `image`
-instead. We can further add coeficients *h* and *k* into the function `outer`:
+instead. We can further add coefficients *h* and *k* into the function `outer`:
 ```R
 x<-0:99
 y<-0:99
@@ -37,8 +37,8 @@ image(w)
 ```
 ![Fig2](fig2.png)
 
-The *h*=2 and *k*=3 cause that if you look at the bottom or top or enywhere in the plot there are
-two cosine waves (4 pi) in the horizontal and if you look at the bottom or top or enywhere in the
+The *h*=2 and *k*=3 cause that if you look at the bottom or top or anywhere in the plot there are
+two cosine waves (4 pi) in the horizontal and if you look at the bottom or top or anywhere in the
 plot there are three cosine waves (6 pi).
 
 Similarly to 1D examples, you can do the same with the sine wave and with waves of *k* and *h*
@@ -53,7 +53,7 @@ image(w)
 ```
 ![Fig3](fig3.png)
 
-In the 1D example we used a 1D car drawn on 20 points and we have shown that we can detrermine it
+In the 1D example we used a 1D car drawn on 20 points and we have shown that we can determine it
 by amplitudes 20 sines and 20 cosine waves (or 20 cosine waves with corresponding phases). In 2D
 example we will make a 2D image of car drawn on 20x20 point canvas:
 ```R
