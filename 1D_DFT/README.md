@@ -13,9 +13,9 @@ lines(x,y)
 ![Fig1](fig1.png)
 
 where car wheels are at x = 5 and 15, front window at 5-7 and rear window at 13-17.
-This shape can be transformed by Fourier transform as a sum of wawes with different
+This shape can be transformed by Fourier transform as a sum of waves with different
 frequencies, amplitudes and phases. It can be shown that this shape can be expressed
-as a sum of sine and cosine waves with an infinit wave length (constant function)
+as a sum of sine and cosine waves with an infinite wave length (constant function)
 and wave lengths equal to the range of data, its 1/2, 1/3, 1/4 etc.
 
 A sine "wave" with infinite wave length `sin(2*pi*0*x/20)` is always zero, so it does
@@ -32,7 +32,7 @@ lines(x,y*cos(2*pi*0*x/20), col="blue")
 
 The red line is the infinite-width cosine wave (equal to 1). The blue line is the original
 car multiplied by the wave, i.e. the original car. We can sum `y*cos(2*pi*0*x/20))` 
-and divide by nember of points to evaluate the content of this sine wave in the car image.
+and divide by number of points to evaluate the content of this sine wave in the car image.
 
 ```R
 sum(y*cos(2*pi*0*x/20))/20
@@ -137,7 +137,7 @@ All together, we can express any discrete one-dimensional function with *N* poin
 *N* pairs of sine and cosine waves of wave lengths equal to infinity, range of function, its 1/2, 1/3,
 1/4 up to 1/(*N*-1). The space of functions `f1` and `f2` is called reciprocal space.
 
-Now let us make two images of the car to mimick the situation in the crystal:
+Now let us make two images of the car to mimic the situation in the crystal:
 
 ```R
 x<-0:39
