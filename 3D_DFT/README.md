@@ -1,8 +1,8 @@
 [<< back](../README.md)
 
-# Discrete Fouriere transform in 3D
+# Discrete Fourier transform in 3D
 
-Discreete Fourier transform can be easilly generalized from 2D to 3D. Fist we make a 3D car:
+Discrete Fourier transform can be easily generalized from 2D to 3D. Fist we make a 3D car:
 ```R
 d<-array(0, dim=c(20,20,20))
 d[3:17,5:8,5:15]<-2
@@ -21,7 +21,7 @@ points3d(dm$Var1,dm$Var2,dm$Var3,size=5,color=rainbow(3)[dm$value+1])
 If you get error message you have to install package reshape2 and rgl by `install.packages("reshape2")`
 and `install.packages("rgl")`.
 
-Instead of waves with coeficients *h* and *k* we have three coeficients *h*, *k* and *l*:
+Instead of waves with coefficients *h* and *k* we have three coefficients *h*, *k* and *l*:
 ```R
 x<-0:19
 y<-0:19
