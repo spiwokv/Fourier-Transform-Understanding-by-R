@@ -27,7 +27,7 @@ plot(x, y, ylim=c(-2,2), type="l")
 ```
 ![Fig3](fig3.png)
 
-Now let's try to decompose this mixture of tones. In real life you can do it by a spectral analyser at your HiFi set or on your MP3 player software. HiFi set or MP3 player software often contains a spectral analyser which plots a content of low and high frequency sounds in your music. In order to do this in R we will look at a product of two sine wave, for example `y1` and `y2`:
+Now let's try to decompose this mixture of tones. In real life you can do it by a spectral analyzer at your HiFi set or on your MP3 player software. HiFi set or MP3 player software often contains a spectral analyzer which plots a content of low and high frequency sounds in your music. In order to do this in R we will look at a product of two sine wave, for example `y1` and `y2`:
 
 ```R
 plot(x, y1*y2, ylim=c(-2,2), type="l")
@@ -108,7 +108,7 @@ sum(sin(2*pi*x)*cos(2*pi*x))
 ```
 ![Fig10](fig10.png)
 
-In the other words, there is a high content of sine but no cosine function. In the other other words, phase matters. Separate scanning by sine and cosine gives you the information on content of waves of certain frequncies and their phases.
+In the other words, there is a high content of sine but no cosine function. In the other other words, phase matters. Separate scanning by sine and cosine gives you the information on content of waves of certain frequencies and their phases.
 
 Mathematically speaking:
 
