@@ -6,6 +6,6 @@ Contents:
 - [3 1D_DFT](03_1D_DFT/README.md)
 - [4 2D_DFT](04_2D_DFT/README.md)
 - [5 3D_DFT](05_3D_DFT/README.md)
-- [6 convolution](06_convolution/README.md)
-- [7 applications](07_applications/README.md)
+- [6 Convolution](06_convolution/README.md)
+- [7 Applications](07_applications/README.md)
 
