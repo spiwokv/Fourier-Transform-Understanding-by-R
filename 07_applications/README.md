@@ -137,8 +137,34 @@ Filtering is not perfect, but you can try yourself to show that the image `znew`
 `z` than to `znoise`.
 
 You can try [more practical example](https://imagej.nih.gov/ij/docs/examples/FFT/index.html)
-using [ImageJ](https://imagej.nih.gov/) program.
+using [ImageJ](https://imagej.nih.gov/ij/index.html) program.
 
 ## Crystallography
+
+3D Fourier transform is the key method for data analysis in X-ray crystallography and many other
+difraction methods. In proten crystallography the crystal of protein is irradiated by X-ray
+beam. Protein(s) in each cell are sensed by X-rays as electron density. The proces of diffraction
+represents the process of Fourier transform. X-rays are diffracted to various angles and detected
+as spots on phothographic board or CCD chip. The geometry of crystal, i.e. the shape and size of
+each cell, is determined by position of spots. The intensity of spots determines the shape (electron
+density) in each cell. This is similar to periodic car images in 1D and 2D. A software can determine
+automatically positions of all spots. From this it is possible to determine the shape of the
+crystal cell. Next, it is possible to determine intensities of all spots. These intensities are
+determined by electron density of the protein in the single cell. In order to determine electron
+densities from spot intensities we would need intensities of cosine and sine waves, i.e. the phase.
+Unfortunatelly, the photographic material or CCD chips cannot recognize the phase. We can determine
+overall intensity (similarly to power spectra). Therefore cannot determine the structure directly.
+This phenomenon is called phase problem. The phase problem can be solved by several methods.
+The most common is isomorphous replacement. For this we need an approximate electron densities
+obtained usually from structures of similar proteins. It is possible to place such model into the
+crystal lattice and predict difraction intensities by Fourier transform. If this strcture is
+sufficiently similar to the studied protein and if it is correctly placed in the crystal the
+predicted diffraction should be in good agreement with the measured diffraction. The model can
+be further optimized to reach satisfactory agreement between predicted and measured diffractions.
+
+
+
+
+
 
 
