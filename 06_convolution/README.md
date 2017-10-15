@@ -26,6 +26,7 @@ plot(tau, f, type="l", col="red")
 lines(tau, g, col="blue")
 lines(tau[1:80], conv)
 ```
+![Fig1](fig1.png)
 
 The convolution of *f* (red) and *g* (blue) step function is a single zigzag function.
 
