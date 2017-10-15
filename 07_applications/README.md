@@ -74,7 +74,8 @@ caused for example by image aquisition (grid of CCD chip) from an image.
 It is possible to transform the image to the space of frequencies, wipe out
 the peaks corresponding to unwanted periodic patterns and convert image back
 to the original space. We can illustrate it on the example of our car image
-with added periodic noise.
+with added periodic noise. This noise can mimic presence of grid artifacts
+caused by image aquisition.
 
 ```R
 z<-matrix(rep(0,times=400), nrow=20)
@@ -82,10 +83,11 @@ z[3:17,5:8]<-2
 z[6:16,9:12]<-1
 z[4:5,4:5]<-1
 z[15:16,4:5]<-1
+znoise<-z
 for(i in 1:5) {
-  z[4*i,1:5*4]<-z[4*i,1:5*4]+rep(1, times=5)
+  znoise[4*i,1:5*4]<-z[4*i,1:5*4]+rep(1, times=5)
 }
-image(z)
+image(znoise)
 ```
 
 We can do Fourier transform:
@@ -97,14 +99,18 @@ y<-0:19
 for(h in 0:19) {
   for(k in 0:19) {
     w<-cos(outer(2*pi*h*x/20, 2*pi*k*y/20, "+"))
-    f1[h+1,k+1]<-sum(w*z)/400
+    f1[h+1,k+1]<-sum(w*znoise)/400
     w<-sin(outer(2*pi*h*x/20, 2*pi*k*y/20, "+"))
-    f2[h+1,k+1]<-sum(w*z)/400
+    f2[h+1,k+1]<-sum(w*znoise)/400
   }
 }
 image(f1)
 image(f2)
 ```
+
+In the spectra you can see peaks indicating the presence of periodic structure. In particular,
+there are peaks at points [6,6], [11,1], [1,11] etc. in `f1` and [1,6], [6,1], [11,6], [6,11]
+etc. in `f2`. We can wipe out periodicity by setting values in these points to zero.
 
 ```R
 f1[6,6]<-0
@@ -112,8 +118,8 @@ f1[11,1]<-0
 f1[1,11]<-0
 f1[11,11]<-0
 f2[1,6]<-0
-f2[6,11]<-0
 f2[6,1]<-0
+f2[6,11]<-0
 f2[11,6]<-0
 znew<-matrix(rep(0,times=400), nrow=20)
 for(h in 0:19) {
@@ -127,6 +133,12 @@ for(h in 0:19) {
 image(znew)
 ```
 
-You can use for example [ImageJ](https://imagej.nih.gov/ij/docs/examples/FFT/index.html)
+Filtering is not perfect, but you can try yourself to show that the image `znew` is closer to
+`z` than to `znoise`.
+
+You can try [more practical example](https://imagej.nih.gov/ij/docs/examples/FFT/index.html)
+using [ImageJ](https://imagej.nih.gov/) program.
+
+## Crystallography
 
 
