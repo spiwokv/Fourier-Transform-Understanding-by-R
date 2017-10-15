@@ -17,6 +17,9 @@ decay (FID) of with frequency 60.25. The term `exp(-0.001*t)` models the decay.
 t<-0:999
 fid<-cos(2*pi*60.25*t/1000)*exp(-0.001*t)
 plot(t, fid, type="l")
+```
+![Fig1](fig1.png)
+```R
 f1<-c()
 f2<-c()
 for(i in 0:100) {
@@ -26,6 +29,8 @@ for(i in 0:100) {
 plot(0:100, f1, type="l")
 plot(0:100, f2, type="l")
 ```
+![Fig2](fig2.png)
+![Fig3](fig3.png)
 
 Because we sample the signal by integral vales of frequency and 60.25 is
 non-integral we obtain spectra out of phase, both if scanned by sine (`f1`)
@@ -34,6 +39,7 @@ or cosine (`f2`) wave.
 ```R
 plot(0:100, sqrt(f1*f1+f2*f2), type="l")
 ```
+![Fig4](fig4.png)
 
 We can solve this by sumation of squares of `f1` and `f2` in so called
 power spectra. Or we can phase our spectra by chosing an angle &omega;
@@ -44,6 +50,7 @@ not lead to properly phased spectrum.
 omega<-0.1*2*pi
 plot(0:100, sin(omega)*f1+cos(omega)*f2, type="l")
 ```
+![Fig5](fig5.png)
 
 But &omega; equal to 0.2 gives good spectrum.
 
@@ -51,6 +58,7 @@ But &omega; equal to 0.2 gives good spectrum.
 omega<-0.2*2*pi
 plot(0:100, sin(omega)*f1+cos(omega)*f2, type="l")
 ```
+![Fig6](fig6.png)
 
 Before NMR experiment it is possible to do the same job by hardware or software
 operations. Advantage of phasing compared to power spectra is in the fact that
@@ -89,6 +97,7 @@ for(i in 1:5) {
 }
 image(znoise)
 ```
+![Fig7](fig7.png)
 
 We can do Fourier transform:
 ```R
@@ -107,6 +116,8 @@ for(h in 0:19) {
 image(f1)
 image(f2)
 ```
+![Fig8](fig8.png)
+![Fig9](fig9.png)
 
 In the spectra you can see peaks indicating the presence of periodic structure. In particular,
 there are peaks at points [6,6], [11,1], [1,11] etc. in `f1` and [1,6], [6,1], [11,6], [6,11]
@@ -132,6 +143,7 @@ for(h in 0:19) {
 }
 image(znew)
 ```
+![Fig10](fig10.png)
 
 Filtering is not perfect, but you can try yourself to show that the image `znew` is closer to
 `z` than to `znoise`.
