@@ -155,23 +155,23 @@ using [ImageJ](https://imagej.nih.gov/ij/index.html) program.
 
 3D Fourier transform is the key method for data analysis in X-ray crystallography and many other
 diffraction methods. In protein crystallography the crystal of protein is irradiated by X-ray
-beam. Protein(s) in each cell are sensed by X-rays as electron density. The process of diffraction
+beam. Electron density of protein(s) in each cell are sensed by X-rays. The process of diffraction
 represents the process of Fourier transform. X-rays are diffracted to various angles and detected
 as spots on photographic board or CCD chip. The geometry of crystal, i.e. the shape and size of
-each cell, is determined by position of spots. The intensity of spots determines the shape (electron
-density) in each cell. This is similar to periodic car images in 1D and 2D. A software can determine
-automatically positions of all spots. From this it is possible to determine the shape of the
-crystal cell. Next, it is possible to determine intensities of all spots. These intensities are
-determined by electron density of the protein in the single cell. In order to determine electron
-densities from spot intensities we would need intensities of cosine and sine waves, i.e. the phase.
+each cell, determines positions of spots. The shape (electron density) in each cell determines
+the intensity of spots. This is similar to periodic car images in 1D and 2D. A software can 
+automatically identify positions of all spots. From this it is possible to calculate the shape of the
+crystal cell. Next, it is possible to measure intensities of all spots. These intensities are
+determined by electron density of the protein in the single cell. In order to obtain electron
+densities from spot intensities we would need intensities of cosine and sine waves, i.e. the phases.
 Unfortunately, the photographic material or CCD chips cannot recognize the phase. We can determine
-overall intensity (similarly to power spectra). Therefore cannot determine the structure directly.
+overall intensity (similarly to power spectra). Therefore we cannot determine the structure directly.
 This phenomenon is called phase problem. The phase problem can be solved by several methods.
 The most common is molecular replacement. For this we need an approximate electron densities
 obtained usually from structures of similar proteins. It is possible to place such model into the
 crystal lattice and predict diffraction intensities by Fourier transform. If this structure is
 sufficiently similar to the studied protein and if it is correctly placed in the crystal the
-predicted diffraction should be in good agreement with the measured diffraction. The model can
+predicted diffraction would be in good agreement with the measured diffractions. The model can
 be further optimized to reach satisfactory agreement between predicted and measured diffractions.
 
 
